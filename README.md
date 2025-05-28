@@ -1,3 +1,38 @@
+20250528
+
+更新了weapp-qrcode.js文件
+
+1、使用Canvas 2D API实现
+2、主要改进：
+- 使用新的Canvas 2D接口替代已废弃的 wx.createCanvasContext
+- 支持同层渲染，提升性能
+- 优化画布尺寸和像素比例设置
+- 改进图片加载机制
+
+
+使用方法：
+1、html文件：
+<canvas type="2d" id="qrcode" style="width: 200px; height: 200px;"></canvas>
+2、JS文件中
+drawQrcode({
+  canvas: canvas, // 可以直接传入canvas对象
+  // 或者使用canvasId
+  canvasId: 'qrcode',
+  width: 200,
+  height: 200,
+  text: '要生成的文本',
+  callback: () => {
+    console.log('生成完成');
+  }
+});
+
+
+
+
+
+
+------------------------------------以下为原开发者所撰内容----------------------------------------
+
 # weapp-qrcode
 
 [![npm version](https://badge.fury.io/js/weapp-qrcode.svg)](https://badge.fury.io/js/weapp-qrcode)
